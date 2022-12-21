@@ -42,5 +42,10 @@ namespace UsersWpf
         {
             vm.EditUser();
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

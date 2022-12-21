@@ -30,5 +30,10 @@ namespace UsersWpf
         {
             NavigationFrame.Navigate(new LoginView());
         }
+
+        private void NavigationFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

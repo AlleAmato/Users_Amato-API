@@ -1,0 +1,36 @@
+﻿@model List<UsersAsp2.Models.User>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista Utenti</h2>
+@Html.ActionLink("Add New User", "Create")
+<table>
+    <thead>
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    @foreach(UsersAsp2.Models.User u in Model)
+     {
+        <tr>
+            <td>@u.LastName</td>
+            <td>@u.FirstName</td>
+            <td>@u.City</td>
+        </tr>
+
+        <tr>
+            <td>
+            @Html.ActionLink("Search by", "GetOne", new {id=u.Id}) |
+            @Html.ActionLink("Edit", "Update", new { id = u.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = u.Id })
+            </td>     
+        </tr>
+     }
+</table>
+

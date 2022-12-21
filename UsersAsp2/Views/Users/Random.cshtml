@@ -1,0 +1,10 @@
+﻿<!--se metto la chiocciola e poi{} scrivo in c#, sennò metto i tag e scrivo in html-->
+@model UsersAsp2.Models.User
+
+<!--<h2>@((string)ViewData["Titolo"])</h2>1 metodo (no view bag)-->
+<h2>@ViewBag.Titolo</h2><!--eseguito a run time, quindi senza controllo-->
+<ul>
+    <li>@Model.FirstName</li>
+    <li>@Model.LastName</li>
+</ul>
+

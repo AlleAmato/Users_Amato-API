@@ -1,0 +1,40 @@
+﻿@model List<UsersAsp2.Models.Login>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+
+    <h2>Lista Utenti</h2>
+    @Html.ActionLink("Add New Login", "Create")
+    <table>
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>Date</th>
+                <th>LoginSuccesfull</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        @foreach (UsersAsp2.Models.Login l in Model)
+        {
+    <tr>
+        <td>@l.UserId</td>
+        <td>@l.Date</td>
+        <td>@l.LoginSuccessful</td>
+        <td>@l.Note</td>
+    </tr>
+
+            <tr>
+                <td>
+                    @Html.ActionLink("Search by Id", "GetOneById", new { idl = l.Id }) |
+                    @Html.ActionLink("Edit", "Update", new { idl = l.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { idl = l.Id })
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
